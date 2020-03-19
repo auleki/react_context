@@ -1,0 +1,24 @@
+import React, { useContext } from 'react'
+import {TaskListContext} from '../context/TaskListContext';
+import Task from './Task';
+
+const TaskList = () => {
+    const { tasks } = useContext(TaskListContext);
+    return (
+        <div>
+            {
+                tasks.length ? (
+                    <ul className="list">
+                     {tasks.map(tasks => { 
+                        return <Task task={tasks} key={tasks.id}/>
+                     })}
+            </ul> 
+                ) : (
+                    <div className="no-tasks">No tasks</div>
+                )}
+            
+        </div>
+    )
+}
+
+export default TaskList; 
