@@ -8,13 +8,14 @@ const TaskForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (!editItem) {
-            addTask(title);
-            setTitle("")
-        } else {
-            editTask(title, editItem.id);            
-        }
-        
+        if(title!=""){
+            if (!editItem) {
+                addTask(title);
+                setTitle("")
+            } else {
+                editTask(title, editItem.id);            
+            }
+        } 
     };
 
     const handleChange = e => {
